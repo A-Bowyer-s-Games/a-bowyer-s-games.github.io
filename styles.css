@@ -125,6 +125,9 @@ footer a {
     .card:focus-within~.card {
         transform: translateY(1rem);
     }
+    .card img {
+        width: 20%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
