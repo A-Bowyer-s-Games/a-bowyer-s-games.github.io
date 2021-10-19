@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #222;
+    --secondary-color: #222;
+    --primary-highlight-color: #181818;
+    --secondary-highlight-color: #888;
+    --primary-text-color: white;
+    --soft-text-color: #ddd;
+    --highlight-text-color: #2f973d;
+    --shadow-color: rgba(0, 0, 0, 0.75);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--primary-text-color);
+}
+
+header {
+    width: 100%;
+    background-color: var(--primary-highlight-color);
+    box-shadow: 1px 1px 3px var(--shadow-color);
+    color: var(--highlight-text-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em 4em;
+}
+
+header img {
+    border-radius: 50%;
+    border: 2px solid var(--primary-color)
+}
+
+article, aside {
+    flex: 1 0 auto;
+}
+
+footer {
+    width: 100%;
+    flex-shrink: 0;
+    background-color: var(--primary-color);
+    box-shadow: 1px -1px 3px var(--shadow-color);
+    color: var(--highlight-text-color);
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px;
+}
+
+footer ul li {
+    margin: 0 8px;
+    flex: 0 1 auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    height: fit-content;
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border-radius: 1em;
+    border: 1px solid var(--shadow-color);
+    box-shadow: 4px 4px 15px 2px var(--shadow-color);
+    padding: 1em 2em;
+    min-height: 10rem;
+    color: var(--soft-text-color);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.card:not(:first-child) {
+    margin-top: -2.5rem;
+}
+
+.card:hover:not(:first-child),
+.card:focus-within:not(:first-child) {
+    transform: translateY(-2.5rem);
+}
+
+.card:hover ~ .card,
+.card:focus-within ~ .card {
+    transform: translateY(1rem);
+}
+
+.card h3 {
+    color: var(--highlight-text-color);
+    margin: 1rem auto;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+}
