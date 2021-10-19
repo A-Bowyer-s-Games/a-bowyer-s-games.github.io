@@ -15,7 +15,8 @@
     padding: 0;
 }
 
-html, body {
+html,
+body {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -45,7 +46,8 @@ header img {
     border: 2px solid var(--primary-color)
 }
 
-article, aside {
+article,
+aside {
     flex: 1 0 auto;
 }
 
@@ -70,6 +72,11 @@ footer ul li {
     flex: 0 1 auto;
 }
 
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .cards {
     display: flex;
     flex-direction: column;
@@ -89,20 +96,6 @@ footer ul li {
     height: 100%;
 }
 
-.card:not(:first-child) {
-    margin-top: -2.5rem;
-}
-
-.card:hover:not(:first-child),
-.card:focus-within:not(:first-child) {
-    transform: translateY(-2.5rem);
-}
-
-.card:hover ~ .card,
-.card:focus-within ~ .card {
-    transform: translateY(1rem);
-}
-
 .card h3 {
     color: var(--highlight-text-color);
     margin: 1rem auto;
@@ -111,4 +104,44 @@ footer ul li {
 .card a {
     color: inherit;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .card:not(:first-child) {
+        margin-top: -2.5rem;
+    }
+    .card:hover:not(:first-child),
+    .card:focus-within:not(:first-child) {
+        transform: translateY(-2.5rem);
+    }
+    .card:hover~.card,
+    .card:focus-within~.card {
+        transform: translateY(1rem);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* From here on, everything is for landscape displays */
+    header {
+        align-items: center;
+        justify-content: left;
+        padding: 0.5rem;
+    }
+    header h3 {
+        margin-left: 1rem;
+    }
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: auto 3rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .card {
+        width: 25em;
+        margin: 2em auto;
+    }
+    .card:hover {
+        transform: translateY(-2rem);
+    }
 }
