@@ -48,6 +48,7 @@ header img {
 
 article,
 aside {
+    min-height: 100%;
     flex: 1 0 auto;
 }
 
@@ -109,6 +110,9 @@ footer a {
 .card img {
     margin-top: 2rem;
     width: 100%;
+}
+
+.card .circle {
     border-radius: 50%;
 }
 
@@ -125,13 +129,28 @@ footer a {
     .card:focus-within~.card {
         transform: translateY(1rem);
     }
-    .card img {
+    .card .circle {
         width: 20%;
     }
 }
 
 @media only screen and (min-width: 768px) {
     /* From here on, everything is for landscape displays */
+     ::-webkit-scrollbar {
+        width: 10px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        background: var(--secondary-highlight-color);
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: var(--shadow-color);
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: var(--secondary-color);
+    }
     header {
         align-items: center;
         justify-content: left;
@@ -152,6 +171,6 @@ footer a {
         margin: 2em auto;
     }
     .card:hover {
-        transform: translateY(-2rem);
+        transform: translateY(-1rem);
     }
 }

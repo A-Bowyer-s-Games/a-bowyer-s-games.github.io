@@ -1,5 +1,3 @@
-window.onload = function() {
-    document.getElementById('logo-image').onclick = function() {
-        document.location.href = "index.html";
-    };
-}
+document.querySelector('header').addEventListener('click', (e) => {
+    window.location = 'index.html';
+});
